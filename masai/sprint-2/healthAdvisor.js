@@ -71,6 +71,7 @@ function renderTable(){
 
 
     var netCalorie = getNetCalorie()
+    showMessage(netCalorie)
     var netCal = document.createElement('td')
     netCal.textContent = netCalorie
 
@@ -92,14 +93,42 @@ function getNetCalorie(){
         return Number(a)+Number(b)
     })
 
+    console.log(countFoodCalorie, countExerciseCalorie)
+
     if(countFoodCalorie > countExerciseCalorie){
         return ("+" + (countFoodCalorie - countExerciseCalorie) )
     }
     if(countFoodCalorie < countExerciseCalorie){
-        return ("-" + (countExerciseCalorie - countExerciseCalorie))
+        return ("-" + (countExerciseCalorie - countFoodCalorie))
     }
     else{
-        return countFoodCalorie
+        return 0
     }
     
+}
+
+
+function showMessage(str){
+    var displayMessage = document.getElementById('resultMessage')
+
+    str = str.split('')
+    var symbol = str.shift()
+    var weightEquivalentOfCalorie = getWeightEquivalentOfCalorie(str.join(''))
+   
+
+    if(symbol == '+'){
+        displayMessage.textContent = 'You have gained calories, equivalent to ' + weightEquivalentOfCalorie + ' kgs'
+    }
+
+    if(symbol == '-'){
+        displayMessage.textContent = 'You have lost calories, equivalent to ' + weightEquivalentOfCalorie + ' kgs'
+    }
+
+}
+
+function getWeightEquivalentOfCalorie(input){
+    input = Number(input)
+
+    var weightEquivalent = Math.round((1/7000)*input*1000)/1000
+    return weightEquivalent
 }
