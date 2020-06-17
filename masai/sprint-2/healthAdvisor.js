@@ -70,7 +70,36 @@ function renderTable(){
     calSpent.textContent = exerciseItem + " : " + exerciseCalorie
 
 
-    row.append(calConsumed, calSpent)
+    var netCalorie = getNetCalorie()
+    var netCal = document.createElement('td')
+    netCal.textContent = netCalorie
+
+
+
+    row.append(calConsumed, calSpent, netCal)
     table.append(row)
 
+}
+
+
+function getNetCalorie(){
+    var calConsumed = Object.values(globalData[0])
+    var calSpent = Object.values(globalData[1])
+    var countFoodCalorie = calConsumed.reduce(function(a,b){
+        return Number(a)+Number(b)
+    })
+    var countExerciseCalorie = calSpent.reduce(function(a,b){
+        return Number(a)+Number(b)
+    })
+
+    if(countFoodCalorie > countExerciseCalorie){
+        return ("+" + (countFoodCalorie - countExerciseCalorie) )
+    }
+    if(countFoodCalorie < countExerciseCalorie){
+        return ("-" + (countExerciseCalorie - countExerciseCalorie))
+    }
+    else{
+        return countFoodCalorie
+    }
+    
 }
