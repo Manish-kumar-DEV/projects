@@ -34,6 +34,9 @@ function getUserDetails(){
 
 // it removes the input values after submiting the values
 function emptyInputElements(){
+
+    renderTable()
+
     var userInput = document.getElementsByClassName('input')
     for(var i = 0; i < userInput.length; i++){
         if(i == 0 || i == 2){
@@ -43,4 +46,31 @@ function emptyInputElements(){
             userInput[i].value = 0
         }
     }
+
+}
+
+
+
+function renderTable(){
+
+    var table = document.getElementById('userResult')
+
+    var userInput = document.getElementsByClassName('input')
+    var foodItem = userInput[0].value
+    var foodCalorie = Number(userInput[1].value)
+    var exerciseItem = userInput[2].value
+    var exerciseCalorie = Number(userInput[3].value)
+
+    var row = document.createElement('tr')
+
+    var calConsumed = document.createElement('td')
+    calConsumed.textContent = foodItem + " : " + foodCalorie
+
+    var calSpent = document.createElement('td')
+    calSpent.textContent = exerciseItem + " : " + exerciseCalorie
+
+
+    row.append(calConsumed, calSpent)
+    table.append(row)
+
 }
