@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Advisor</title>
+    <link rel="stylesheet" href="healthAdvisor.css">
+</head>
+<body>
+    <div class="heading"> HEALTH ADVISOR</div>
+
+    <div id="mainContainer">
+
+        <!-- user input area -->
+        <div class="userInputArea">
+            <form>
+                <div>
+                    <label>Food</label>
+                    <input type="text" class="input"/>
+
+                    <label>Calories</label>
+                    <input type="number" placeholder="Calories added" class="input">
+                </div>
+                <div>
+                    <label>Exercise</label>
+                    <input type="text" class="input"/>
+
+                    <label>Calories</label>
+                    <input type="number" placeholder="Calories spent" class="input">
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+
+        <!-- showing results area -->
+        <div id="resultMessage">
+
+        </div>
+
+        <div>
+            <table id="userResult">
+                <tr>
+                    <th>Calories Consumed</th>
+                    <th>Calories Spent</th>
+                    <th>Net Calories Gained or Lost</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="healthAdvisor.js"></script>
+</body>
+</html>

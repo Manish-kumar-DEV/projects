@@ -1,0 +1,28 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.heading{
+    font-size: 30px;
+}
+
+label{
+    display: inline-block;
+    width: 100px;
+    margin: 10px 0px;
+}
+
+.userInputArea{
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+#userResult{
+    margin:auto;
+    align-items: center;
+}
+
+th{
+    padding: 0px 10px;
+}
