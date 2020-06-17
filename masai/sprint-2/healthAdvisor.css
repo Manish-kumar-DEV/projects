@@ -1,10 +1,22 @@
 *{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Prata', serif;
     text-align: center;
+    background-color: #87cefa;
+}
+
+
+.mainBody{
+    width: 60%;
+    min-height: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .heading{
     font-size: 30px;
+    font-family: 'Prata', serif;
 }
 
 label{
@@ -13,9 +25,28 @@ label{
     margin: 10px 0px;
 }
 
+input{
+    border: 1px solid black;
+}
+
+.userInputArea div:nth-last-child(1) > input{
+    padding: 3px 10px;
+    margin: 8px 0px;
+}
+
+.userInputArea div:nth-last-child(1) > input:hover{
+    background-color: #289ae0;
+    color: white;
+}
+
 .userInputArea{
     margin: 10px 0px;
     padding: 10px;
+}
+
+#resultMessage{
+    margin: 10px 0px;
+    padding: 10px 0px;
 }
 
 #userResult{
@@ -23,6 +54,14 @@ label{
     align-items: center;
 }
 
-th{
-    padding: 0px 10px;
+.gainedWeight{
+    background-color: rgb(248, 194, 94);
+}
+
+.lostWeight{
+    background-color: lightgreen;
+}
+
+th,td{
+    padding: 10px;
 }

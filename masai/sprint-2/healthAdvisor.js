@@ -111,17 +111,24 @@ function getNetCalorie(){
 function showMessage(str){
     var displayMessage = document.getElementById('resultMessage')
 
-    str = str.split('')
-    var symbol = str.shift()
-    var weightEquivalentOfCalorie = getWeightEquivalentOfCalorie(str.join(''))
-   
-
-    if(symbol == '+'){
-        displayMessage.textContent = 'You have gained calories, equivalent to ' + weightEquivalentOfCalorie + ' kgs'
+    if(str != 0){
+        str = str.split('')
+        var symbol = str.shift()
+        var weightEquivalentOfCalorie = getWeightEquivalentOfCalorie(str.join(''))
+       
+    
+        if(symbol == '+'){
+            displayMessage.textContent = 'You have gained calories, equivalent to ' + weightEquivalentOfCalorie + ' kgs'
+            displayMessage.setAttribute('class','gainedWeight')
+        }
+    
+        if(symbol == '-'){
+            displayMessage.textContent = 'You have lost calories, equivalent to ' + weightEquivalentOfCalorie + ' kgs'
+            displayMessage.setAttribute('class','lostWeight')
+        }
     }
-
-    if(symbol == '-'){
-        displayMessage.textContent = 'You have lost calories, equivalent to ' + weightEquivalentOfCalorie + ' kgs'
+    else{
+        displayMessage.textContent = 'You have neither gained, nor lost calories'
     }
 
 }
