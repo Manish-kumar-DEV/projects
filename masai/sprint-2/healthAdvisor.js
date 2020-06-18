@@ -64,10 +64,20 @@ function renderTable(){
     var row = document.createElement('tr')
 
     var calConsumed = document.createElement('td')
-    calConsumed.textContent = foodItem + " : " + foodCalorie
-
+    if(foodItem == ''){
+        calConsumed.textContent = ''
+    }
+    else{
+        calConsumed.textContent = foodItem + " : " + foodCalorie
+    }
+    
     var calSpent = document.createElement('td')
-    calSpent.textContent = exerciseItem + " : " + exerciseCalorie
+    if(exerciseItem == ''){
+        calSpent.textContent = ''
+    }
+    else{
+        calSpent.textContent = exerciseItem + " : " + exerciseCalorie
+    }
 
 
     var netCalorie = getNetCalorie()
